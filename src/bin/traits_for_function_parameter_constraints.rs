@@ -57,14 +57,15 @@ impl Acommodation for AirBnB {
     }
 }
 
+fn book_for_one_night(entity: &mut impl Acommodation, guest: &str) {
+    entity.book(guest, 1);;
+}
 fn main() {
     let mut hotel = Hotel::new("The Luxe");
-    println!("{}", hotel.summarize());
-    hotel.book("Piers", 5);
-    println!("{:#?}", hotel);
-
+    book_for_one_night(&mut hotel, "Piers");
+    println!("{hotel:#?}");
+    
     let mut airbnb = AirBnB::new("Peter");
-    println!("{}", airbnb.get_description());
-    airbnb.book("Piers", 3);
-    println!("{:#?}", airbnb);
+    book_for_one_night(&mut airbnb, "amanda");
+    println!("{airbnb:#?}");
 }
