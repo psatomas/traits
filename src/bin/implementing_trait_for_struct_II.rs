@@ -1,6 +1,6 @@
 use std::collections::HashMap;
 
-trait Acommodation {
+trait Accommodation {
     fn get_description(&self) -> String;
     fn book(&mut self, name: &str, nights: u32);
 }
@@ -20,7 +20,7 @@ impl Hotel {
     }
 }
 
-impl Acommodation for Hotel {
+impl Accommodation for Hotel {
     fn get_description(&self) -> String {
         format!("{} is the pinnacle of luxury", self.name)
     }
@@ -45,7 +45,7 @@ impl AirBnB {
     }
 }
 
-impl Acommodation for AirBnB {
+impl Accommodation for AirBnB {
     fn get_description(&self) -> String {
         format!("Please enjoy {}'s apartment", self.host)
     }
