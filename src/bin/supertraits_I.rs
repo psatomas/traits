@@ -58,6 +58,7 @@ impl Taxable for Bonus {
     const TAX_RATE: f64 = 0.50;
 }
 
+#[derive(Debug)]
 struct QualityTime {
     minutes: f64,
 }
